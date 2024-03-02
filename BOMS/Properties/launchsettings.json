@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "BOMS (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "BOMS (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
