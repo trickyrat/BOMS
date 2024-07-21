@@ -18,4 +18,14 @@ public sealed partial class OrderDataGridPage : Page
         ViewModel = App.GetService<OrderDataGridViewModel>();
         InitializeComponent();
     }
+
+    private void CommandBarEditButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+    {
+
+    }
+
+    private void CommandBarDeleteButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+    {
+
+    }
 }

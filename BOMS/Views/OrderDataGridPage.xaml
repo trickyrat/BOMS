@@ -7,7 +7,31 @@
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     mc:Ignorable="d">
 
-    <Grid x:Name="ContentArea">
+    <RelativePanel>
+        <TextBlock x:Name="PageTitle" Text="Orders"/>
+
+        <CommandBar x:Name="MainCommandBar"
+                    HorizontalAlignment="Stretch"
+                    Background="Transparent"
+                    DefaultLabelPosition="Right"
+                    RelativePanel.LeftOf="OrderSearchBox"
+                    RelativePanel.RightOf="PageTitle">
+            <AppBarButton x:Name="CommandBarEditButton"
+                          Click="CommandBarEditButton_Click"
+                          Icon="Edit"
+                          IsEnabled="False"
+                          Label="Edit"/>
+            <AppBarButton x:Name="CommandBarDeleteButton"
+                          Click="CommandBarDeleteButton_Click"
+                          Icon="Delete"
+                          IsEnabled="False"
+                          Label="Delete"/>
+            <AppBarButton x:Name="CommandBarRefreshButton"
+                          Icon="Refresh"
+                          IsEnabled="False"
+                          Label="Refresh"/>
+        </CommandBar>
+        
         <controls:DataGrid
             AutoGenerateColumns="False"
             GridLinesVisibility="Horizontal"
@@ -16,7 +40,6 @@
                 <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundColor" Color="Transparent" />
             </controls:DataGrid.Resources>
             <controls:DataGrid.Columns>
-                <!-- TODO: Replace column definitions to match real data. Consider adding Header values to Resources.resw. -->
                 <controls:DataGridTextColumn Binding="{Binding OrderID}" Header="OrderID" />
                 <controls:DataGridTextColumn Binding="{Binding OrderDate}" Header="OrderDate" />
                 <controls:DataGridTextColumn Binding="{Binding Company}" Header="Company" />
@@ -36,5 +59,5 @@
                 </controls:DataGridTemplateColumn>
             </controls:DataGrid.Columns>
         </controls:DataGrid>
-    </Grid>
+    </RelativePanel>
 </Page>
